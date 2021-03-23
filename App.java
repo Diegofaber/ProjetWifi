@@ -36,7 +36,7 @@ public class App extends JFrame implements MouseListener, ItemListener,ActionLis
     String s1[] = { "Access point", "Pc", "Obstacle"};
     c1 = new JComboBox(s1);
 	c1.addItemListener(this);
-	String s2[] = { "Bois", "Verre","Eau","Metal"};
+	String s2[] = { "Bois", "Plastique", "Verre","Verre teinte","Eau","Etres vivants","Briques","Platre","Ceramique","Papier","Beton","Verre Blinde","Metal"};
     c2 = new JComboBox(s2);
     c2.addItemListener(this);
     l1 = new JLabel("Add ");
@@ -123,7 +123,13 @@ public class App extends JFrame implements MouseListener, ItemListener,ActionLis
 					b.drawObstacle(ga,x, y);
                 	APverif(ga,x,y,0.1) ;
 				}
-				
+				else if(c2.getSelectedItem() == "Plastique")
+				{
+					Plastique p = new Plastique(x,y,0.2);
+					Obstacles.add(p);
+                	p.drawObstacle(ga,x, y);
+                	APverif(ga,x,y,0.2) ;
+				}
 				else if(c2.getSelectedItem() == "Verre")
 				{
 					Verre v = new Verre(x,y,0.3);
@@ -131,7 +137,13 @@ public class App extends JFrame implements MouseListener, ItemListener,ActionLis
                 	v.drawObstacle(ga,x, y);
                 	APverif(ga,x,y,0.3) ;
 				}
-				
+				else if(c2.getSelectedItem() == "Verre teinte")
+				{
+					VerreTeinte vt = new VerreTeinte(x,y,0.5);
+					Obstacles.add(vt);
+                	vt.drawObstacle(ga,x, y);
+                	APverif(ga,x,y,0.5) ;
+				}
 				else if(c2.getSelectedItem() == "Eau")
 				{
 					Eau ea = new Eau(x,y,0.5);
@@ -139,7 +151,55 @@ public class App extends JFrame implements MouseListener, ItemListener,ActionLis
                 	ea.drawObstacle(ga,x, y);
                 	APverif(ga,x,y,0.5) ;
 				}
-				
+				else if(c2.getSelectedItem() == "Etres vivants")
+				{
+					EtreVivant ev = new EtreVivant(x,y,0.5);
+					Obstacles.add(ev);
+                	ev.drawObstacle(ga,x, y);
+                	APverif(ga,x,y,0.5) ;
+				}
+				else if(c2.getSelectedItem() == "Briques")
+				{
+					Briques b = new Briques(x,y,0.5);
+					Obstacles.add(b);
+                	b.drawObstacle(ga,x, y);
+                	APverif(ga,x,y,0.5) ;
+				}
+				else if(c2.getSelectedItem() == "Platre")
+				{
+					Platre p = new Platre(x,y,0.5);
+					Obstacles.add(p);
+                	p.drawObstacle(ga,x, y);
+                	APverif(ga,x,y,0.5) ;
+				}
+				else if(c2.getSelectedItem() == "Ceramique")
+				{
+					Ceramique c = new Ceramique(x,y,0.7);
+					Obstacles.add(c);
+                	c.drawObstacle(ga,x, y);
+                	APverif(ga,x,y,0.7) ;
+				}
+				else if(c2.getSelectedItem() == "Papier")
+				{
+					Papier p = new Papier(x,y,0.7);
+					Obstacles.add(p);
+                	p.drawObstacle(ga,x, y);
+                	APverif(ga,x,y,0.7) ;
+				}
+				else if(c2.getSelectedItem() == "Beton")
+				{
+					Beton b = new Beton(x,y,0.85);
+					Obstacles.add(b);
+                	b.drawObstacle(ga,x, y);
+                	APverif(ga,x,y,0.85) ;
+				}
+				else if(c2.getSelectedItem() == "Verre blinde")
+				{
+					VerreBlinde vb = new VerreBlinde(x,y,0.85);
+					Obstacles.add(vb);
+                	vb.drawObstacle(ga,x, y);
+                	APverif(ga,x,y,0.85) ;
+				}
 				else if(c2.getSelectedItem() == "Metal")
 				{
 					Metal m = new Metal(x,y,0.9);
